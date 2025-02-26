@@ -1,5 +1,7 @@
 package CS113;
 
+import java.util.ArrayList;
+
 public class ArrayListNM<E> implements ListInterface<E> {
     private E[] array;
     final static int DEFAULT_SIZE = 10;
@@ -60,7 +62,7 @@ public class ArrayListNM<E> implements ListInterface<E> {
 
     @Override
     public void clear() {
-        for (E element : array) {
+        for(E element : array) {
             element = null;
         }
     }
@@ -72,11 +74,11 @@ public class ArrayListNM<E> implements ListInterface<E> {
 
     @Override
     public int indexOf(Object object) {
-        if (object == null) {
+        if(object == null){
             return -1;
         }
-        for (int i = 0; i < array.length; i++) {
-            if (object.equals(array[i])) {
+        for(int i=0; i < array.length; i++){
+            if(object.equals(array[i])){
                 return i;
             }
         }
@@ -117,11 +119,35 @@ public class ArrayListNM<E> implements ListInterface<E> {
 
     @Override
     public int size() {
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (array[i] != null) {
+                return i + 1;
+            }
+        }
         return 0;
     }
 
     @Override
     public void set(int index, E element) {
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException();
+        }
+        array[index] = element;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("[");
+
+        int size = size();
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(array[i]);
+            if (i < size - 1) stringBuilder.append(", ");
+        }
+
+        stringBuilder.append("]");
+        return stringBuilder.toString();
     }
 }
