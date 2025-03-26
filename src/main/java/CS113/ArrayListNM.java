@@ -1,9 +1,9 @@
 package CS113;
 
-import java.util.ArrayList;
+import CS113.interfaces.ListInterface;
 
 public class ArrayListNM<E> implements ListInterface<E> {
-    private E[] array;
+    protected E[] array;
     final static int DEFAULT_SIZE = 10;
 
     public ArrayListNM() {
@@ -47,10 +47,16 @@ public class ArrayListNM<E> implements ListInterface<E> {
             array[array.length - 1] = element;
         }
 
-        for (int i = size(); i >= index; i--) {
-            array[i] = array[i - 1];
+//        for (int i = size(); i >= index; i--) {
+//            array[i] = array[i - 1];
+//        }
+//        array[index] = element;
+
+        for (int i = index; i < array.length; i++) {
+            E temp = array[i];
+            array[i] = element;
+            element = temp;
         }
-        array[index] = element;
 
 //        for (int i = index; i < array.length - 1; i++) {
 //            E temp = array[(i + 1)];

@@ -1,19 +1,16 @@
 package CS113;
 
-import CS113.interfaces.DequeInterface;
 import CS113.interfaces.ListInterface;
-import CS113.interfaces.ListIterableInterface;
-import CS113.interfaces.ListIteratorInterface;
 
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ListInterface<Integer> ourList = new LinkedListPH<>();
+        ListInterface<Integer> ourList = new LinkedListNM<>();
         List<Integer> javaList = new LinkedList<>();
-        ArrayStackPH<Integer> stack = new ArrayStackPH<>();
-        ArrayQueuePH<Integer> queue = new ArrayQueuePH<>();
+        ArrayStackNM<Integer> stack = new ArrayStackNM<>();
+        ArrayQueueNM<Integer> queue = new ArrayQueueNM<>();
 
         for (int i = 0; i < 12; i++) {
             ourList.add(i);
