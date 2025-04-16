@@ -49,5 +49,17 @@ public class Main {
 //        System.out.println("Cleared List:");
 //        ourList.clear();
 //        System.out.println(ourList);
+
+        HashMapNM<String, Integer> myHashTableNM = new HashMapNM<>();
+        myHashTableNM.put("One", 1);
+        myHashTableNM.put("Two", 2);
+        myHashTableNM.put("Three", 3);
+        myHashTableNM.put("Four", 4);
+        myHashTableNM.put("Five", 5);
+
+        myHashTableNM.remove("Three");
+        System.out.println(myHashTableNM.values());
+        System.out.println("Contains 'One'? " + myHashTableNM.get("One") != null ? "True" : "False");
+
     }
 }
