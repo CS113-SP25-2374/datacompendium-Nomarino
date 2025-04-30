@@ -57,7 +57,7 @@ public class Main {
         myHashTableNM.put("Four", 4);
         myHashTableNM.put("Five", 5);
 
-        myHashTableNM.remove("Three");
+        myHashTableNM.remove("Three  ");
         System.out.println(myHashTableNM.values());
         System.out.println("Contains 'One'? " + myHashTableNM.get("One") != null ? "True" : "False");
 
